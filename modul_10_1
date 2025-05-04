@@ -1,0 +1,20 @@
+def bandingkan_file(file1, file2):
+    with open(file1, "r") as f1, open(file2, "r") as f2:
+        a = f1.readlines()
+        b = f2.readlines()
+        maxlen = max(len(a), len(b))
+        beda = 0
+
+        for i in range(maxlen):
+            baris1 = a[i].strip() if i < len(a) else "(tidak ada)"
+            baris2 = b[i].strip() if i < len(b) else "(tidak ada)"
+
+            if baris1 != baris2:
+                print(f"Beda pada baris ke-{i + 1}:")
+                print(f"  File1: {baris1}")
+                print(f"  File2: {baris2}\n")
+                beda += 1
+
+        print(f"Total beda: {beda}")
+
+bandingkan_file("tes1.txt", "tes2.txt")
