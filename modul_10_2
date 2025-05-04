@@ -1,0 +1,10 @@
+handle = open("teks2.txt")
+
+for line in handle:
+    jawaban = line.split("||")[1].strip()
+    print(line.split("||")[0])
+    jawab = input("Jawab: ")
+    if jawab == jawaban:
+        print("Jawaban benar!")
+    else:
+        print("Salah!")
